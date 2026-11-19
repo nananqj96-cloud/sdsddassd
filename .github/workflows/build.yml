@@ -32,9 +32,22 @@ jobs:
           LIBGL_ALWAYS_SOFTWARE: '1'
           ALSOFT_DRIVERS: 'null'
         run: |
+          mkdir -p run
+          printf 'onboardAccessibility:false\n' > run/options.txt
           set -o pipefail
           timeout 360s xvfb-run -a -s '-screen 0 1280x720x24' gradle --no-daemon runClient -PvortexCiSmoke 2>&1 | tee gui-smoke.log
           grep -q 'VORTEX_CI_GUI_SMOKE_PASS' gui-smoke.log
+      - name: Surface client diagnostics in check annotations
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for path in (Path('gui-smoke.log'), Path('run/logs/latest.log')):
+              if path.exists():
+                  tail = path.read_text(errors='replace')[-10000:]
+                  escaped = tail.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+                  print(f'::warning title={path}::{escaped}')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
