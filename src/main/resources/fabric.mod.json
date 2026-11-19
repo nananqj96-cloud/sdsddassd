@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "vortexclient",
+  "version": "${version}",
+  "name": "Vortex Client",
+  "description": "Vortex Client: configurable informational HUD and client interface for Minecraft 1.21.11.",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.vortex.client.VortexClient"] },
+  "depends": { "fabricloader": ">=0.18.4", "minecraft": "1.21.11", "java": ">=21", "fabric-api": "*" }
+}

@@ -1,0 +1,6 @@
+.gradle/
+build/
+run/
+test-classes/
+google_drive/
+*.log
