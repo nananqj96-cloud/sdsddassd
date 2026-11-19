@@ -24,6 +24,7 @@ public final class VortexClient implements ClientModInitializer {
     public static final Modules MODULES = new Modules();
     public static VortexConfig CONFIG;
     private KeyBinding openGui;
+    private final UtilityFeatures utilities = new UtilityFeatures();
     private Object previousWorld;
     private boolean speedReady;
     private double lastX, lastZ, speed;
@@ -41,6 +42,7 @@ public final class VortexClient implements ClientModInitializer {
         HudElementRegistry.attachElementBefore(VanillaHudElements.CHAT, Identifier.of("vortexclient", "status"), (context, delta) -> renderHud(context));
     }
     private void tick(MinecraftClient client) {
+        utilities.tick(client, MODULES);
         while (openGui.wasPressed()) {
             if (client.currentScreen == null && client.player != null) client.setScreen(new VortexDashboard());
         }

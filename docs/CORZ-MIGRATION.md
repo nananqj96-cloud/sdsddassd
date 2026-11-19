@@ -76,7 +76,7 @@ Status meanings: **existing equivalent** means Vortex already has a related impl
 | `misc/ACAlert` | pending |
 | `misc/AutoPot` | pending |
 | `misc/AutoPromo` | pending |
-| `misc/AutoTool` | pending |
+| `misc/AutoTool` | independent initial implementation: faster hotbar tool while mining; no previous-slot restore; not full parity |
 | `misc/BoatFly` | pending |
 | `misc/Capes` | pending |
 | `misc/CorzRadio` | pending |
@@ -94,7 +94,7 @@ Status meanings: **existing equivalent** means Vortex already has a related impl
 | `misc/SkinProtect` | pending |
 | `misc/TimeChanger` | pending |
 | `misc/WeatherChanger` | pending |
-| `misc/WeatherNotifier` | pending |
+| `misc/WeatherNotifier` | independent initial implementation: local rain/thunder transition notices; not full parity |
 | `misc/Zoom` | pending |
 | `movement/AutoSpear` | pending |
 | `movement/AutoWalk` | pending |

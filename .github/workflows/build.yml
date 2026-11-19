@@ -23,6 +23,8 @@ jobs:
           mkdir -p test-classes
           javac -d test-classes src/main/java/dev/vortex/client/Modules.java src/main/java/dev/vortex/client/VortexConfig.java tests/ConfigSmokeTest.java
           java -cp test-classes ConfigSmokeTest
+          javac -d test-classes src/main/java/dev/vortex/client/ToolSelection.java tests/ToolSelectionTest.java
+          java -cp test-classes ToolSelectionTest
       - name: Build remapped client and sources
         run: gradle --no-daemon build
       - name: Install virtual display and software rendering

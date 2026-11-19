@@ -32,7 +32,9 @@ public final class Modules {
         new Module("inventory", "Inventory Slots", "Show how many main inventory slots are occupied.", Group.INVENTORY, false),
         new Module("totem_count", "Totem Counter", "Count totems in your main inventory, hotbar and offhand.", Group.INVENTORY, false),
         new Module("sprint", "Sprint", "Sprint while moving forward when allowed by the game.", Group.MOVEMENT, false),
-        new Module("respawn", "Auto Respawn", "Immediately request respawn on the death screen.", Group.PLAYER, false)
+        new Module("respawn", "Auto Respawn", "Immediately request respawn on the death screen.", Group.PLAYER, false),
+        new Module("auto_tool", "Auto Tool", "Select a faster hotbar tool while mining. Does not restore the previous slot.", Group.INVENTORY, false),
+        new Module("weather_notifier", "Weather Notifier", "Local chat notice when rain or thunder changes. No server messages.", Group.PLAYER, false)
     );
     public boolean enabled(String id) {
         return all.stream().anyMatch(module -> module.id.equals(id) && module.enabled);

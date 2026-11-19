@@ -4,6 +4,14 @@ This repository now contains the extracted Vortex source, a visible **For Anarch
 
 Build with JDK 21 and Gradle 9.2.1: `gradle build`. Test menu rendering with `gradle runClient -PvortexCiSmoke` (requires a graphical display; exits automatically after rendering). Normal launches never activate that test path. CI uploads JARs and logs as artifacts. The totem counter includes the offhand.
 
+## Initial utility additions
+
+Two opt-in modules have independent implementations (not copied Corz code):
+- **Auto Tool** selects a strictly faster hotbar item while holding attack over a breakable block. Ties retain the selected slot. It does not move inventory items, account for all enchantment/harvest rules, or restore the previous slot.
+- **Weather Notifier** writes a local chat message when rain/thunder changes. It suppresses the initial state on joining a world and sends no server chat.
+
+These are not claims of full Corz parity. CI tests tool-selection logic and menu startup; world interaction remains unverified.
+
 The original source-package notes below describe the baseline and are retained for context; their untested status predates the Actions workflow.
 
 ---
